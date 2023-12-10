@@ -30,11 +30,13 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
+# packages
 INSTALLED_APPS += [
     'rest_framework',
     'rest_framework_simplejwt',
 ]
 
+# apps
 INSTALLED_APPS += [
     'main',
 ]

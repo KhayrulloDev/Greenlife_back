@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Partner(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='pics')
     youtube_link = models.URLField()
 
