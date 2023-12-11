@@ -1,5 +1,5 @@
 from django.db import models
-
+from main.models.partner import Partner
 from main.models.category import Category
 
 
@@ -12,6 +12,7 @@ class Product(models.Model):
     category = models.CharField(max_length=255)
     description = models.TextField()
     data_json = models.JSONField()
+    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:
