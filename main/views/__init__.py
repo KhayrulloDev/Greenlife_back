@@ -1,1 +1,1 @@
-from .partner_api import GetPartner
+from .partner_api import GetPartner, ProductByPartner
