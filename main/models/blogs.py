@@ -6,3 +6,10 @@ class Blog(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='pics')
     youtube_link = models.URLField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blogs'
+
+    def __str__(self):
+        return f"{self.title}"
