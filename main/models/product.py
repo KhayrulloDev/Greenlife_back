@@ -10,8 +10,8 @@ class Product(models.Model):
     growth_zone = models.CharField(max_length=255)
     organization = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
-    description = models.TextField()
-    data_json = models.JSONField()
+    description = models.TextField(null=True, blank=True)
+    data_json = models.JSONField(null=True, blank=True)
     partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True, blank=True)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
 
