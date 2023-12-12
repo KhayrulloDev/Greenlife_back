@@ -3,6 +3,7 @@ from datetime import timedelta
 from pathlib import Path
 from dotenv import load_dotenv
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv()
@@ -10,7 +11,7 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY='django-insecure-8_pb&y7rdry1ar#=w-ss%u6k(5js-8gg!bpc6@hawpdx%63*ta'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -141,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# JAZZMIN
 JAZZMIN_SETTINGS = {
     "site_title": "GreenLife",
     "site_header": "GreenLife",
