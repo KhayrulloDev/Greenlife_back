@@ -1,7 +1,14 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Partner, Product, Order
+from .models import Partner, Product, Order, Category
 from .models.feedback import Feedback
 from .models.reviews import Review
+
+
+class CategorySerializer(ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ('id', 'name', 'parent_id')
 
 
 class PartnerSerializer(ModelSerializer):

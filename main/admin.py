@@ -2,6 +2,12 @@ from django.contrib import admin
 from main.models import Category, Product, File, Order, Partner, Blog
 
 
+# INLINE
+class FileInline(admin.TabularInline):
+    model = File
+    fields = ('file',)
+
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
@@ -11,10 +17,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'price', 'category_id')
 
-
-@admin.register(File)
-class FileAdmin(admin.ModelAdmin):
-    list_display = ('id', 'file')
+    inlines = (FileInline,)
 
 
 @admin.register(Order)
@@ -24,7 +27,7 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('id', 'name', 'country')
 
 
 @admin.register(Blog)
