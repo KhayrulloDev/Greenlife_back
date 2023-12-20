@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import GetPartner, ProductByPartner
+from .views.blogs import BlogListGenericAPIView, BlogDetailGenericAPIView
 from .views.categories import CategoryGenericAPIView, CategoryParentGenericAPIView
 from .views.feedbacks import FeedbackGenericAPIView
 from .views.price_list import PriceListGenericAPIView
@@ -12,6 +13,8 @@ urlpatterns = [
     path('product-list/<int:pk>', ProductGenericAPIView.as_view(), name='product_list'),
     path('products/<int:category_id>', ProductWithCategoryGenericAPIView.as_view(), name='products'),
     path('order-product', OrderProductGenericAPIView.as_view(), name='order_product'),
+    path('blog-list', BlogListGenericAPIView.as_view(), name='blog_list'),
+    path('blog-detail<int:pk>', BlogDetailGenericAPIView.as_view(), name='blog_detail'),
     path('get-partners', GetPartner.as_view(), name='partners'),
     path('partner/<int:pk>/product', ProductByPartner.as_view(), name='partner-products'),
     path('feedback', FeedbackGenericAPIView.as_view(), name='feedback'),

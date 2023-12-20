@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Partner, Product, Order, Category
+from .models import Partner, Product, Order, Category, Blog
 from .models.feedback import Feedback
 from .models.reviews import Review
 
@@ -55,4 +55,18 @@ class ReviewSerializer(ModelSerializer):
 
     class Meta:
         model = Review
+        fields = '__all__'
+
+
+class BlogSerializer(ModelSerializer):
+
+    class Meta:
+        model = Blog
+        fields = ('id', 'title', 'image')
+
+
+class BlogDetailSerializer(ModelSerializer):
+
+    class Meta:
+        model = Blog
         fields = '__all__'
