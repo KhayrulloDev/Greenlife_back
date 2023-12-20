@@ -4,8 +4,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class File(models.Model):
-    file = models.FileField(upload_to='pics')
-    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+    file = models.FileField(upload_to='pics', verbose_name=_('File'))
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name=_('Product ID'))
 
     class Meta:
         verbose_name = _('File')

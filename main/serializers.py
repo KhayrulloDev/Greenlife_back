@@ -34,7 +34,7 @@ class ProductWithCategory(ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'productivity', 'growth_zone', 'data_json')
+        fields = ('id', 'name', 'productivity')
 
 
 class OrderProductSerializer(ModelSerializer):
