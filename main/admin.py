@@ -1,4 +1,5 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 from main.models import Category, Product, File, Order, Partner, Blog
 
 
@@ -9,8 +10,8 @@ class FileInline(admin.TabularInline):
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+class CategoryAdmin(TranslationAdmin):
+    list_display = ('name',)
 
 
 @admin.register(Product)
