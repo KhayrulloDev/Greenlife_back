@@ -1,10 +1,20 @@
 from rest_framework.serializers import ModelSerializer
+
 from .models import Partner, Product
 from .models import Partner, Product, Order
+
+from .models import Partner, Product, Order, Category
 from .models.feedback import Feedback
 from .models.reviews import Review
 
 from .models import Partner, Blog
+
+
+class CategorySerializer(ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = ('id', 'name', 'parent_id')
 
 
 class PartnerSerializer(ModelSerializer):
@@ -40,7 +50,7 @@ class ProductPriceListSerializer(ModelSerializer):
 class ProductWithCategory(ModelSerializer):
     class Meta:
         model = Product
-        fields = ('name', 'productivity', 'growth_zone', 'data_json')
+        fields = ('id', 'name', 'productivity')
 
 
 class OrderProductSerializer(ModelSerializer):
