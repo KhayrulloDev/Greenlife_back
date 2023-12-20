@@ -8,7 +8,7 @@ class CategorySerializer(ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'parent_id')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'parent_id')
 
 
 class PartnerSerializer(ModelSerializer):
@@ -27,14 +27,14 @@ class ProductPriceListSerializer(ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'organization', 'category', 'price')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'organization', 'category_en', 'category_uz', 'category_ru', 'price')
 
 
 class ProductWithCategory(ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'productivity')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'productivity')
 
 
 class OrderProductSerializer(ModelSerializer):
@@ -62,7 +62,7 @@ class BlogSerializer(ModelSerializer):
 
     class Meta:
         model = Blog
-        fields = ('id', 'title', 'image')
+        fields = ('id', 'title_en', 'title_uz', 'title_ru', 'image')
 
 
 class BlogDetailSerializer(ModelSerializer):

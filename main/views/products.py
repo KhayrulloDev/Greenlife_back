@@ -14,7 +14,10 @@ class ProductWithCategoryGenericAPIView(GenericAPIView):
             serializer = self.get_serializer(products, many=True)
             list_data = []
             for product in serializer.data:
-                product['image'] = File.objects.get(product_id=product['id']).file.url
+                try:
+                    product['image'] = File.objects.get(product_id=product['id']).file.url
+                except File.DoesNotExist:
+                    product['image'] = None
                 list_data.append(product)
         except Exception as e:
             return Response({"message": str(e)}, status=404)
