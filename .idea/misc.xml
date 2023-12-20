@@ -3,5 +3,9 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.11 (Greenlife_back)" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (Greenlife_back)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10 (Greenlife_back)" project-jdk-type="Python SDK" />
+>>>>>>> 73a58490a9d076dbc53964f8f0afbd4381fc7baa
 </project>

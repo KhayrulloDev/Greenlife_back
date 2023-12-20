@@ -1,10 +1,18 @@
+
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
+
+from main.models.reviews import Review
 from main.serializers import ReviewSerializer
 
 
 class ReviewGenericAPIView(GenericAPIView):
     serializer_class = ReviewSerializer
+
+    def get(self, request):
+        reviews = Review.objects.all()
+        serializer = self.get_serializer(reviews, many=True)
+        return Response(serializer.data)
 
     def post(self, request):
         try:

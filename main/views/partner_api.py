@@ -20,6 +20,12 @@ class ProductByPartner(GenericAPIView):
     def get(self, request, pk):
         products = Product.objects.filter(partner_id=pk)
         serializer = self.get_serializer(products, many=True)
+
+        product_ids = [product['id'] for product in serializer.data]
+        files = File.objects.filter(product_id__in=product_ids)
+        file_map = {file.product_id: file.file.url for file in files}
+
         for product in serializer.data:
-            product['image'] = File.objects.get(product_id=product['id']).file.url
+            product['image'] = file_map.get(product['id'])
+
         return Response(serializer.data)

@@ -1,7 +1,7 @@
 from rest_framework.generics import GenericAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from main.models import Product, File
-from main.serializers import ProductSerializer, OrderProductSerializer, ProductWithCategory
+from main.serializers import ProductSerializer, ProductWithCategory
 
 
 class ProductWithCategoryGenericAPIView(GenericAPIView):
@@ -41,15 +41,5 @@ class ProductGenericAPIView(GenericAPIView):
             return Response({"message": str(e)}, status=500)
 
 
-class OrderProductGenericAPIView(GenericAPIView):
-    serializer_class = OrderProductSerializer
 
-    def post(self, request):
-        try:
-            serializer = self.get_serializer(data=request.data)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-        except Exception as e:
-            return Response({"message": str(e)}, status=404)
-        return Response(serializer.data)
 

@@ -9,6 +9,7 @@ class Order(models.Model):
     email = models.EmailField(max_length=255)
     product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
     count = models.PositiveBigIntegerField(default=1)
+    status = models.BooleanField(default=0)
 
     class Meta:
         verbose_name = _('Order')

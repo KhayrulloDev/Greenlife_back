@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
+
     name = models.CharField(max_length=255, verbose_name=_('Name'))
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name=_('Price'))
     productivity = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Productivity'))
