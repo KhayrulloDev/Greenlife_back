@@ -10,4 +10,4 @@ class CategoryTranslation(TranslationOptions):
 
 @register(Product)
 class ProductTranslation(TranslationOptions):
-    pass
+    fields = ('name', 'category', 'description')
