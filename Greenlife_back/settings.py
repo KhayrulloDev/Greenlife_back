@@ -129,9 +129,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz'
 LANGUAGES = (
-    ("en-us", "English"),
+    ("en", "English"),
     ("uz", "Uzbek"),
     ("ru", "Russia"),
 )
@@ -154,7 +154,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
-MODELTRANSLATION_LANGUAGES = ('uz', 'ru')
+MODELTRANSLATION_LANGUAGES = ('uz', 'ru', 'en')
 
 # JAZZMIN
 JAZZMIN_SETTINGS = {

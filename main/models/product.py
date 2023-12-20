@@ -5,16 +5,14 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
-    price = models.CharField(max_length=255)
-    productivity = models.CharField(max_length=255)
-    growth_zone = models.CharField(max_length=255)
-    organization = models.CharField(max_length=255)
-    category = models.CharField(max_length=255)
-    description = models.TextField(null=True, blank=True)
-    data_json = models.JSONField(null=True, blank=True)
-    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True, blank=True)
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name=_('Price'))
+    productivity = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Productivity'))
+    organization = models.CharField(max_length=255, blank=True, null=True, verbose_name=_('Organization'))
+    category = models.CharField(max_length=255, verbose_name=_('Category'))
+    description = models.TextField(null=True, blank=True, verbose_name=_('Description'))
+    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True, blank=True, verbose_name=_('Partner ID'))
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name=_('Category ID'))
 
     class Meta:
         verbose_name = _('Product')
