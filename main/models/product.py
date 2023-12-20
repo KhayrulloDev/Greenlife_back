@@ -12,7 +12,7 @@ class Product(models.Model):
     category = models.CharField(max_length=255)
     description = models.TextField()
     data_json = models.JSONField()
-    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE)
+    partner_id = models.ForeignKey(Partner, on_delete=models.CASCADE, null=True, blank=True)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     class Meta:

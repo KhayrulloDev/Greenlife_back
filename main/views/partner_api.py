@@ -1,7 +1,7 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 
-from main.models import Partner, Product
+from main.models import Partner, Product, file, File
 from main.serializers import PartnerSerializer, ProductSerializer
 
 
@@ -17,11 +17,9 @@ class GetPartner(GenericAPIView):
 class ProductByPartner(GenericAPIView):
     serializer_class = ProductSerializer
 
-    def get_queryset(self):
-        pk = self.kwargs.get('pk')
-        return Product.objects.filter(partner_id=pk)
-
     def get(self, request, pk):
-        products = self.get_queryset()
-        serialized = self.get_serializer(products, many=True)
-        return Response(serialized.data)
+        products = Product.objects.filter(partner_id=pk)
+        serializer = self.get_serializer(products, many=True)
+        for product in serializer.data:
+            product['image'] = File.objects.get(product_id=product['id']).file.url
+        return Response(serializer.data)

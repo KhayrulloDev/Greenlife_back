@@ -19,7 +19,7 @@ class FileAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user_name', 'phone_number', 'product_id', 'count')
+    list_display = ('id', 'name', 'phone_number', 'product_id', 'count')
 
 
 @admin.register(Partner)
