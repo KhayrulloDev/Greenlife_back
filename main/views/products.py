@@ -25,15 +25,16 @@ class ProductGenericAPIView(GenericAPIView):
 
     def get(self, request, pk):
         try:
-            product = Product.objects.filter(pk=pk)
-            serializer = self.get_serializer(product, many=True)
-            list_data = []
-            for product in serializer.data:
-                product['image'] = File.objects.get(product_id=product['id']).file.url
-                list_data.append(product)
+            product = Product.objects.get(pk=pk)
+            serializer = self.get_serializer(product)
+            image = File.objects.get(product_id=product.id).file.url
+            serialized_data = serializer.data
+            serialized_data['image'] = image
+            return Response(serialized_data)
+        except Product.DoesNotExist:
+            return Response({"message": "Product not found!"}, status=404)
         except Exception as e:
-            return Response({"message": str(e)}, status=404)
-        return Response(list_data)
+            return Response({"message": str(e)}, status=500)
 
 
 class OrderProductGenericAPIView(GenericAPIView):

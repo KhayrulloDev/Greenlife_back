@@ -11,11 +11,11 @@ class FileInline(admin.TabularInline):
 
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin):
-    list_display = ('name',)
+    list_display = ('id', 'name', 'parent_id')
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
     list_display = ('id', 'name', 'price', 'category_id')
 
     inlines = (FileInline,)

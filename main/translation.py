@@ -11,5 +11,3 @@ class CategoryTranslation(TranslationOptions):
 @register(Product)
 class ProductTranslation(TranslationOptions):
     pass
-
-
