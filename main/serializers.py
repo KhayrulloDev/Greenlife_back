@@ -34,7 +34,7 @@ class ProductWithCategory(ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ('id', 'name', 'productivity', 'growth_zone', 'data_json')
+        fields = ('id', 'name', 'productivity', 'growth_zone', 'description')
 
 
 class OrderProductSerializer(ModelSerializer):
@@ -50,9 +50,22 @@ class FeedBackSerializer(ModelSerializer):
         model = Feedback
         fields = '__all__'
 
+        read_only_fields = ['status']
+
+
+class FeedBackSerializerForPatch(ModelSerializer):
+
+    class Meta:
+        model = Feedback
+        fields = '__all__'
+
+        read_only_fields = ['id', 'phone_number', 'message']
+
 
 class ReviewSerializer(ModelSerializer):
 
     class Meta:
         model = Review
         fields = '__all__'
+
+        read_only_fields = ['reviewed_at']
