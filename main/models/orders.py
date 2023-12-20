@@ -1,5 +1,6 @@
 from django.db import models
 from main.models.product import Product
+from django.utils.translation import gettext_lazy as _
 
 
 class Order(models.Model):
@@ -10,8 +11,8 @@ class Order(models.Model):
     count = models.PositiveBigIntegerField(default=1)
 
     class Meta:
-        verbose_name = 'Order'
-        verbose_name_plural = 'Orders'
+        verbose_name = _('Order')
+        verbose_name_plural = _('Orders')
 
     def __str__(self):
         return f"{self.name}"

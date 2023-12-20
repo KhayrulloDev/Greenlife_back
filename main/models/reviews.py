@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Review(models.Model):
@@ -9,8 +10,8 @@ class Review(models.Model):
     reviewed_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name = 'Review'
-        verbose_name_plural = 'Reviews'
+        verbose_name = _('Review')
+        verbose_name_plural = _('Reviews')
 
     def __str__(self):
         return f"{self.name}"

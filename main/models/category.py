@@ -1,5 +1,6 @@
 from mptt.models import MPTTModel, TreeForeignKey
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class Category(MPTTModel):
@@ -7,8 +8,8 @@ class Category(MPTTModel):
     parent = TreeForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = 'Category'
-        verbose_name_plural = 'Categories'
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
 
     def __str__(self):
         return f"{self.name}"
