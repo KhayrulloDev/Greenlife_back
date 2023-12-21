@@ -143,13 +143,13 @@ msgstr "Tashkilot"
 #, fuzzy
 #| msgid "Partner"
 msgid "Partner ID"
-msgstr "Hamkor"
+msgstr "Hamkor ID"
 
 #: main/models/product.py:15
 #, fuzzy
 #| msgid "Category"
 msgid "Category ID"
-msgstr "Turkum"
+msgstr "Turkum ID"
 
 #: main/models/product.py:18
 msgid "Product"
