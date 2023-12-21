@@ -50,7 +50,6 @@ class ProductPriceListSerializer(ModelSerializer):
 class ProductWithCategory(ModelSerializer):
     class Meta:
         model = Product
-
         fields = ('id', 'name', 'productivity')
 
 

@@ -23,7 +23,11 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="inheritedJdk" />
+=======
+    <orderEntry type="jdk" jdkName="Python 3.11 (Greenlife_back)" jdkType="Python SDK" />
+>>>>>>> 5c7c0f04acca1b404270e44c07578134734db39b
     <orderEntry type="sourceFolder" forTests="false" />
 >>>>>>> 73a58490a9d076dbc53964f8f0afbd4381fc7baa
   </component>

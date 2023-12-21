@@ -1,4 +1,5 @@
-from rest_framework.generics import GenericAPIView, RetrieveAPIView
+from django.db.models import Q
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from main.models import Product, File
 from main.serializers import ProductSerializer, ProductWithCategory
@@ -25,15 +26,27 @@ class ProductGenericAPIView(GenericAPIView):
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')
-        return Product.objects.filter(partner_id=pk)
+
+        # print(Product.objects.get(Q(pk=pk)))
+        return Product.objects.filter(pk=pk)
 
     def get(self, request, pk):
         try:
-            product = Product.objects.get(pk=pk)
+            product = self.get_queryset().first()
+            if not product:
+                raise Product.DoesNotExist
+
             serializer = self.get_serializer(product)
-            image = File.objects.get(product_id=product.id).file.url
             serialized_data = serializer.data
-            serialized_data['image'] = image
+
+            product_id = serialized_data['id']
+            files = File.objects.filter(product_id=product_id)
+            if files.exists():
+                image = files.first().file.url
+                serialized_data['image'] = image
+            else:
+                serialized_data['image'] = None
+
             return Response(serialized_data)
         except Product.DoesNotExist:
             return Response({"message": "Product not found!"}, status=404)
