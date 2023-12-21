@@ -133,7 +133,7 @@ msgstr "Narxi"
 #, fuzzy
 #| msgid "Product"
 msgid "Productivity"
-msgstr "Mahsulot"
+msgstr "Hosildorlik"
 
 #: main/models/product.py:11
 msgid "Organization"
