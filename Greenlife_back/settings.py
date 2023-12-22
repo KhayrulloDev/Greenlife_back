@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'modeltranslation',
     'django.contrib.admin',
     'drf_yasg',
+    'corsheaders',
 ]
 
 # packages
@@ -46,6 +47,7 @@ INSTALLED_APPS += [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,6 +60,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Greenlife_back.urls'
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
 
 TEMPLATES = [
     {
