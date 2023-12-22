@@ -135,7 +135,7 @@ msgstr "Цена"
 #, fuzzy
 #| msgid "Product"
 msgid "Productivity"
-msgstr "Продукт"
+msgstr "Производительность"
 
 #: main/models/product.py:11
 msgid "Organization"
@@ -145,13 +145,13 @@ msgstr "Организация"
 #, fuzzy
 #| msgid "Partner"
 msgid "Partner ID"
-msgstr "Партнер"
+msgstr "Партнер ID"
 
 #: main/models/product.py:15
 #, fuzzy
 #| msgid "Category"
 msgid "Category ID"
-msgstr "Категория"
+msgstr "Категория ID"
 
 #: main/models/product.py:18
 msgid "Product"

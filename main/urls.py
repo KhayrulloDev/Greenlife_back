@@ -7,6 +7,7 @@ from .views.feedbacks import FeedbackGenericAPIView, FeedbackCheckedView
 from .views.orders import OrderProductGenericAPIView, OrderPatchView
 from .views.price_list import PriceListGenericAPIView
 from .views.products import ProductWithCategoryGenericAPIView, ProductGenericAPIView
+from .views.products import ProductWithCategoryGenericAPIView, OrderProductGenericAPIView, ProductGenericAPIView
 from .views.reviews import ReviewGenericAPIView
 
 urlpatterns = [
@@ -15,6 +16,7 @@ urlpatterns = [
     path('price-list', PriceListGenericAPIView.as_view(), name='price_list'),
     path('reviews', ReviewGenericAPIView.as_view(), name='review'),
     path('product-list/<int:pk>', ProductGenericAPIView.as_view(), name='product_list'),
+    path('product-detail/<int:pk>', ProductGenericAPIView.as_view(), name='product_detail'),
     path('products/<int:category_id>', ProductWithCategoryGenericAPIView.as_view(), name='products'),
     path('order-product', OrderProductGenericAPIView.as_view(), name='order_product'),
     path('blog-list', BlogListGenericAPIView.as_view(), name='blog_list'),
@@ -26,4 +28,7 @@ urlpatterns = [
     path('feedback', FeedbackGenericAPIView.as_view(), name='feedback'),
     path('feedback/<int:pk>/checked', FeedbackCheckedView.as_view(), name='feedback_checked'),
     path('order/<int:pk>/checked', OrderPatchView.as_view(), name='order_checked'),
+    path('partnerproduct<int:pk>', ProductByPartner.as_view(), name='partner-products'),
+    path('feedback', FeedbackGenericAPIView.as_view(), name='feedback'),
+    path('review', ReviewGenericAPIView.as_view(), name='review'),
 ]
