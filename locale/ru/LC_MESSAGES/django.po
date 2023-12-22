@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-20 10:17+0000\n"
+"POT-Creation-Date: 2023-12-20 15:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,23 @@ msgstr ""
 #: main/apps.py:8
 msgid "main"
 msgstr "Основной"
+
+#: main/models/blogs.py:6
+msgid "Title"
+msgstr "Заголовок"
+
+#: main/models/blogs.py:7 main/models/product.py:13
+msgid "Description"
+msgstr "Описание"
+
+#: main/models/blogs.py:8 main/models/partner.py:7
+#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:393
+msgid "Image"
+msgstr "Изображение"
+
+#: main/models/blogs.py:9
+msgid "You Tube link"
+msgstr "ссылка на ютуб"
 
 #: main/models/blogs.py:12
 msgid "Blog"
@@ -98,11 +115,6 @@ msgstr "Заказ"
 msgid "Orders"
 msgstr "Заказы"
 
-#: main/models/partner.py:7
-#: venv/lib/python3.11/site-packages/django/db/models/fields/files.py:393
-msgid "Image"
-msgstr "Изображение"
-
 #: main/models/partner.py:8
 msgid "Country"
 msgstr "Страна"
@@ -128,10 +140,6 @@ msgstr "Продукт"
 #: main/models/product.py:11
 msgid "Organization"
 msgstr "Организация"
-
-#: main/models/product.py:13
-msgid "Description"
-msgstr "Описание"
 
 #: main/models/product.py:14
 #, fuzzy

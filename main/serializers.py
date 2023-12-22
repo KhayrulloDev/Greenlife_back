@@ -1,20 +1,16 @@
 from rest_framework.serializers import ModelSerializer
 
-from .models import Partner, Product
-from .models import Partner, Product, Order
-
-from .models import Partner, Product, Order, Category
+from .models import Partner, Blog
+from .models import Product, Order, Category
 from .models.feedback import Feedback
 from .models.reviews import Review
-
-from .models import Partner, Blog
 
 
 class CategorySerializer(ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('id', 'name', 'parent_id')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'parent_id')
 
 
 class PartnerSerializer(ModelSerializer):
@@ -44,13 +40,13 @@ class BlogListSerializer(ModelSerializer):
 class ProductPriceListSerializer(ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'name', 'organization', 'category', 'price')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'organization', 'category_en', 'category_uz', 'category_ru', 'price')
 
 
 class ProductWithCategory(ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'name', 'productivity')
+        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'productivity')
 
 
 
@@ -83,3 +79,17 @@ class ReviewSerializer(ModelSerializer):
         fields = '__all__'
 
         read_only_fields = ['reviewed_at']
+
+
+class BlogSerializer(ModelSerializer):
+
+    class Meta:
+        model = Blog
+        fields = ('id', 'title_en', 'title_uz', 'title_ru', 'image')
+
+
+class BlogDetailSerializer(ModelSerializer):
+
+    class Meta:
+        model = Blog
+        fields = '__all__'

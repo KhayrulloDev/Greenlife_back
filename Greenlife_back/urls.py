@@ -11,7 +11,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 schema_view = get_schema_view(
     openapi.Info(
-      title="Express API",
+      title="GreenLife API",
       default_version='v1',
       description="Test description",
       terms_of_service="https://www.google.com/policies/terms/",

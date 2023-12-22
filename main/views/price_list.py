@@ -19,4 +19,3 @@ class PriceListGenericAPIView(GenericAPIView):
             list_data.append(product_dict)
 
         return Response(list_data)
-
