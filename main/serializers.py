@@ -7,7 +7,6 @@ from .models.reviews import Review
 
 
 class CategorySerializer(ModelSerializer):
-
     class Meta:
         model = Category
         fields = ('id', 'name_en', 'name_uz', 'name_ru', 'parent_id')
@@ -40,14 +39,14 @@ class BlogListSerializer(ModelSerializer):
 class ProductPriceListSerializer(ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'name_en', 'name_uz', 'name_ru', 'organization', 'category_en', 'category_uz', 'category_ru', 'price')
+        fields = (
+        'id', 'name_en', 'name_uz', 'name_ru', 'organization', 'category_en', 'category_uz', 'category_ru', 'price')
 
 
 class ProductWithCategory(ModelSerializer):
     class Meta:
         model = Product
         fields = ('id', 'name_en', 'name_uz', 'name_ru', 'productivity')
-
 
 
 class OrderProductSerializer(ModelSerializer):
@@ -65,7 +64,6 @@ class FeedBackSerializer(ModelSerializer):
 
 
 class FeedBackSerializerForPatch(ModelSerializer):
-
     class Meta:
         model = Feedback
         fields = '__all__'
@@ -81,15 +79,8 @@ class ReviewSerializer(ModelSerializer):
         read_only_fields = ['reviewed_at']
 
 
-class BlogSerializer(ModelSerializer):
-
-    class Meta:
-        model = Blog
-        fields = ('id', 'title_en', 'title_uz', 'title_ru', 'image')
-
 
 class BlogDetailSerializer(ModelSerializer):
-
     class Meta:
         model = Blog
         fields = '__all__'

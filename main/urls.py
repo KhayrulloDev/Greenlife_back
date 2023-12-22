@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import GetPartner, ProductByPartner, BlogAPIView, BlogDetailAPIView
+
+from .views import BlogAPIView, BlogDetailAPIView
 from .views import GetPartner, ProductByPartner
 from .views.blogs import BlogListGenericAPIView, BlogDetailGenericAPIView
 from .views.categories import CategoryGenericAPIView, CategoryParentGenericAPIView
 from .views.feedbacks import FeedbackGenericAPIView, FeedbackCheckedView
-from .views.orders import OrderProductGenericAPIView, OrderPatchView
+from .views.orders import OrderPatchView
 from .views.price_list import PriceListGenericAPIView
-from .views.products import ProductWithCategoryGenericAPIView, ProductGenericAPIView
 from .views.products import ProductWithCategoryGenericAPIView, OrderProductGenericAPIView, ProductGenericAPIView
 from .views.reviews import ReviewGenericAPIView
 
