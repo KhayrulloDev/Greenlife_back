@@ -1,6 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from main.models import Category, Product, File, Order, Partner, Blog
+from main.models.feedback import Feedback
+from main.models.reviews import Review
 
 
 # INLINE
@@ -35,3 +37,12 @@ class PartnerAdmin(admin.ModelAdmin):
 class BlogAdmin(TranslationAdmin):
     list_display = ('id', 'title', 'description')
 
+
+@admin.register(Feedback)
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ('id', 'email', 'message')
+
+
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'reviewed_at')
