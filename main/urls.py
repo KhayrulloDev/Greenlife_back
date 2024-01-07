@@ -14,5 +14,5 @@ urlpatterns = [
     path('blog-list', BlogListGenericAPIView.as_view(), name='blog_list'),
     path('blog-detail<int:pk>', BlogDetailGenericAPIView.as_view(), name='blog_detail'),
     path('get-partners', GetPartner.as_view(), name='partners'),
-    path('partnerproduct<int:pk>', ProductByPartner.as_view(), name='partner-products'),
+    path('partner-product/<int:pk>', ProductByPartner.as_view(), name='partner-products'),
 ]
