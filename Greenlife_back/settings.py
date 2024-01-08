@@ -62,9 +62,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'Greenlife_back.urls'
 
 CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
-]
+CORS_ALLOWED_ORIGINS = ['*']
 
 TEMPLATES = [
     {
